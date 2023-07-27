@@ -4,22 +4,43 @@
     "type": "split",
     "children": [
       {
-        "id": "8662702729cc4cec",
+        "id": "61fef0dfbef7b88b",
         "type": "tabs",
         "children": [
           {
-            "id": "b5621273b2acc02c",
+            "id": "732e6dcf444e32b9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Binary Search.md",
+                "file": "University/Algebra/Algebra.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "de00a60214bc22da",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          },
+          {
+            "id": "fdbe91ca17c4a552",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "University/Algebra/Basic/Operations with Real Numbers.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,8 +90,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 390.5
   },
   "right": {
     "id": "e0e614d4281f89c8",
@@ -86,7 +106,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Binary Search.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +122,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Binary Search.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,9 +143,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Binary Search.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -135,8 +151,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,45 +163,54 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b5621273b2acc02c",
+  "active": "de00a60214bc22da",
   "lastOpenFiles": [
-    "Searching.md",
-    "Tier 1 Spells (Algorithms).md",
-    "Binary Search.md",
-    "Recursion.md",
-    "Common Recursion Operations.md",
-    "Recursive Sorting.md",
-    "Sorting.md",
-    "Radix Sort.md",
-    "Pasted image 20230716134653.png",
-    "Application Development.md",
-    "Quick Sort.md",
-    "Big O.md",
-    "Factorial.md",
-    "Fibonacci.md",
-    "Merge Sort.md",
-    "Bubble Sort.md",
-    "Insertion Sort.md",
-    "Loop n times.md",
-    "Computer Science.md",
-    "Algorithms.md",
-    "IT.md",
-    "Pasted image 20230715234405.png",
-    "Pasted image 20230715224953.png",
-    "Pasted image 20230715223810.png",
-    "Pasted image 20230715223806.png",
-    "Pasted image 20230715222449.png",
-    "Pasted image 20230715222122.png",
-    "Pasted image 20230715220941.png",
-    "Pasted image 20230715220738.png",
-    "Pasted image 20230715215530.png",
-    "Software.md",
-    "Data Structures.md",
-    "Programming Languages.md",
-    "Security.md",
-    "Operative Systems.md",
-    "Networking.md",
-    "Untitled.canvas",
-    "Untitled"
+    "University/Algebra/Basic/Operations with Real Numbers.md",
+    "University/Algebra/Basic/Factoring and Expanding Algebraic Expressions.md",
+    "University/Algebra/Basic/Exponents and Radicals.md",
+    "University/Algebra/Basic/Basic.md",
+    "University/Algebra/Algebra.md",
+    "University/Algebra/Basic/Solving Systems of Equations.md",
+    "University/Algebra/Basic/Solving Linear and Quadratic Equations.md",
+    "University/Pre Calculus.md",
+    "University/Math.md",
+    "University/Algebra/Basic",
+    "[Operations with Real Numbers.md",
+    "University/Algebra",
+    "IT/Programming Languages/Python/Frameworks/Django/cheatsheet.md",
+    "University",
+    "IT",
+    "IT/Programming Languages/Python/Python.md",
+    "IT/Computer Science.md",
+    "IT/Application Development.md",
+    "IT/Big O.md",
+    "2search",
+    "IT/Binary Search.md",
+    "IT/Insertion Sort.md",
+    "IT/Bubble Sort.md",
+    "IT/Common Recursion Operations.md",
+    "IT/Factorial.md",
+    "IT/Fibonacci.md",
+    "IT/Programming Languages/Python/Frameworks/Django/http.md",
+    "IT/Programming Languages/Python/Frameworks/Django/models.md",
+    "IT/IT.md",
+    "IT/Loop n times.md",
+    "IT/Programming Languages/Python/Frameworks/Django/Django.md",
+    "IT/Programming Languages",
+    "IT/Programming Languages/Python/Frameworks",
+    "IT/Programming Languages/Python",
+    "Django/cheatsheet",
+    "IT/Programming Languages/Python/Frameworks/Django",
+    "IT/Pasted image 20230716134653.png",
+    "IT/Pasted image 20230715234405.png",
+    "IT/Pasted image 20230715224953.png",
+    "IT/Pasted image 20230715223810.png",
+    "IT/Pasted image 20230715223806.png",
+    "IT/Pasted image 20230715222449.png",
+    "IT/Pasted image 20230715222122.png",
+    "IT/Pasted image 20230715220941.png",
+    "IT/Pasted image 20230715220738.png",
+    "IT/Pasted image 20230715215530.png",
+    "Untitled.canvas"
   ]
 }
