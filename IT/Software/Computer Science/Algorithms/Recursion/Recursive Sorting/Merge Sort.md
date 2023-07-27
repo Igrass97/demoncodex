@@ -14,4 +14,28 @@ merge sort:
 **Time Complexity**: T(n) = 2T(n/2) + θ(n)
 **Time Complexity:** O(N), In merge sort all elements are copied into an auxiliary array. So N auxiliary space is required for merge sort.
 
-![[Pasted image 20230715234405.png]]
+
+``` js
+const mergeSort = nums => {
+	const merge = (a, b) => {
+		const results = [];
+
+		while (a.length && b.length) {
+			if (a[0] < b[0]) {
+				results.push(a.shift());
+			} else {
+				results.push(b.shift());
+			}
+		}
+
+		return [...results, ...a, ...b];
+	}
+
+	if (nums.length === 1) return nums;
+
+	return merge(
+		mergeSort(nums.slice(0, Math.floor(nums.length / 2))),
+		mergeSort(nums.slice(Math.floor(nums.length / 2)))
+	);
+}
+```

@@ -4,43 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "61fef0dfbef7b88b",
+        "id": "78e2b4a6f51d6fd4",
         "type": "tabs",
         "children": [
           {
-            "id": "732e6dcf444e32b9",
+            "id": "1ffab827813b8595",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Algebra/Algebra.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "de00a60214bc22da",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
-            }
-          },
-          {
-            "id": "fdbe91ca17c4a552",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "University/Algebra/Basic/Operations with Real Numbers.md",
+                "file": "IT/Software/Security.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "IT/Software/Security.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "IT/Software/Security.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -143,11 +124,12 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "IT/Software/Security.md"
+              }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -163,54 +145,54 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "de00a60214bc22da",
+  "active": "1ffab827813b8595",
   "lastOpenFiles": [
-    "University/Algebra/Basic/Operations with Real Numbers.md",
-    "University/Algebra/Basic/Factoring and Expanding Algebraic Expressions.md",
-    "University/Algebra/Basic/Exponents and Radicals.md",
-    "University/Algebra/Basic/Basic.md",
-    "University/Algebra/Algebra.md",
-    "University/Algebra/Basic/Solving Systems of Equations.md",
-    "University/Algebra/Basic/Solving Linear and Quadratic Equations.md",
-    "University/Pre Calculus.md",
-    "University/Math.md",
-    "University/Algebra/Basic",
-    "[Operations with Real Numbers.md",
-    "University/Algebra",
-    "IT/Programming Languages/Python/Frameworks/Django/cheatsheet.md",
-    "University",
-    "IT",
-    "IT/Programming Languages/Python/Python.md",
-    "IT/Computer Science.md",
-    "IT/Application Development.md",
-    "IT/Big O.md",
-    "2search",
-    "IT/Binary Search.md",
-    "IT/Insertion Sort.md",
-    "IT/Bubble Sort.md",
-    "IT/Common Recursion Operations.md",
-    "IT/Factorial.md",
-    "IT/Fibonacci.md",
-    "IT/Programming Languages/Python/Frameworks/Django/http.md",
-    "IT/Programming Languages/Python/Frameworks/Django/models.md",
-    "IT/IT.md",
-    "IT/Loop n times.md",
-    "IT/Programming Languages/Python/Frameworks/Django/Django.md",
-    "IT/Programming Languages",
-    "IT/Programming Languages/Python/Frameworks",
-    "IT/Programming Languages/Python",
-    "Django/cheatsheet",
-    "IT/Programming Languages/Python/Frameworks/Django",
+    "IT/Software/Operative Systems.md",
+    "IT/Software/Networking.md",
+    "IT/Software/Data Science.md",
+    "IT/Software/Computer Science/Algorithms/Big O.md",
+    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Sorting/Radix Sort.md",
+    "IT/Pasted image 20230715215503.png",
+    "IT/Pasted image 20230715215530.png",
     "IT/Pasted image 20230716134653.png",
     "IT/Pasted image 20230715234405.png",
+    "IT/Software/Computer Science/Algorithms/Recursion/Recursive Sorting/Merge Sort.md",
     "IT/Pasted image 20230715224953.png",
+    "IT/Software/Computer Science/Algorithms/Recursion/Recursive Sorting/Quick Sort.md",
     "IT/Pasted image 20230715223810.png",
+    "IT/Software/Computer Science/Algorithms/Recursion/Common Recursion Operations/Loop n times.md",
     "IT/Pasted image 20230715223806.png",
     "IT/Pasted image 20230715222449.png",
     "IT/Pasted image 20230715222122.png",
     "IT/Pasted image 20230715220941.png",
-    "IT/Pasted image 20230715220738.png",
-    "IT/Pasted image 20230715215530.png",
+    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Sorting/Bubble Sort.md",
+    "University/Algebra/Basic/Basic.md",
+    "University/Algebra/Algebra.md",
+    "University/Pre Calculus.md",
+    "University/Math.md",
+    "IT/Software/Application Development/Programming Languages/Programming Languages.md",
+    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Sorting/Insertion Sort.md",
+    "IT/Software/Application Development/Application Development.md",
+    "IT/Hardware",
+    "IT/Software/Application Development",
+    "IT/Software/Computer Science/Computer Science.md",
+    "IT/Software/Software.md",
+    "IT/IT.md",
+    "IT/Software",
+    "IT/Software/Computer Science",
+    "IT/Software/Computer Science/Algorithms/Recursion/Common Recursion Operations/Common Recursion Operations.md",
+    "IT/Software/Computer Science/Algorithms/Recursion/Recursion.md",
+    "IT/Software/Computer Science/Algorithms/Recursion/Common Recursion Operations",
+    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Searching/Searching.md",
+    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Tier 1 Spells (Algorithms).md",
+    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Searching",
+    "IT/Software/Computer Science/Algorithms/Recursion/Recursive Sorting/Recursive Sorting.md",
+    "IT/Software/Computer Science/Algorithms/Algorithms.md",
+    "IT/Software/Computer Science/Algorithms/Recursion/Recursive Sorting",
+    "IT/Software/Computer Science/Algorithms/Recursion",
+    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Sorting/Sorting.md",
+    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Sorting",
+    "IT/Software/Computer Science/Algorithms/Tier 1 Spells",
     "Untitled.canvas"
   ]
 }

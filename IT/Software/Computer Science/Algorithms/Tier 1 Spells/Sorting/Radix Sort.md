@@ -16,4 +16,28 @@ When every element from the array is assigned to a bucket, de-queue each bucket 
 **Time Complexity**: It has a time complexity of **O(d * (n + b))**, where d is the number of digits, n is the number of elements, and b is the base of the number system being used.
 **Space Complexity**: Radix sort also has a space complexity of **O(n + b),** where n is the number of elements and b is the base of the number system.
 
-![[Pasted image 20230716134653.png]]
+``` js
+const radixSort = (nums) => {
+  let buckets = Array(10)
+    .fill(null)
+    .map((_v) => []);
+
+  const maxLength = Math.max(...nums).toString().length;
+
+  for (let i = 0; i < maxLength; i++) {
+    while (nums.length) {
+      const n = nums.shift();
+      const place = n.toString().split("").reverse().join("")[i] || 0;
+      buckets[place].push(n);
+    }
+
+    buckets.forEach((b) => {
+      while (b.length) {
+        nums.push(b.shift());
+      }
+    });
+  }
+
+  return nums;
+};
+```

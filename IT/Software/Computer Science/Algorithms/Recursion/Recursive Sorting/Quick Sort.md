@@ -16,4 +16,23 @@ The subarrays are sorted recursively with quick sort, and when you get arrays of
 **Worst Case:*** O(N2)
 **Auxiliary Space:*** O(1)
 
-![[Pasted image 20230715224953.png]]
+``` js
+const quickSort = nums => {
+	if (nums.length <= 1) return nums;
+
+	const pivot = nums.pop();
+
+	const left = [];
+	const right = [];
+
+	nums.forEach(n => {
+		if (n > pivot) {
+			right.push(n);
+		} else {
+			left.push(n);
+		}
+	});
+
+	return [...quickSort(left), pivot, ...quickSort(right)];
+}
+```
