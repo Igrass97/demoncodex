@@ -11,23 +11,28 @@ Fields are defined using a `Field` class like `CharField` (imported from models)
 
 Models can have methods
 
-    from django.db import models
+``` python
+from django.db import models
 
-    class Person(models.Model):
-        first_name = models.CharField(max_length=30)
-        last_name = models.CharField(max_length=30)
+class Person(models.Model):
+	first_name = models.CharField(max_length=30)
+	last_name = models.CharField(max_length=30)
 
-        def get_full_name(self):
-            return self.first_name + self.last_name
+	def get_full_name(self):
+		return self.first_name + self.last_name
+```
+
 
 ## Create instance and save to DB
 
 Simply instanciate the class and call `.save()`
 
-    from models import Person
+``` python
+from models import Person
 
-    p = Person(first_name='Ignacio', last_name='Grassini')
-    p.save()
+p = Person(first_name='Ignacio', last_name='Grassini')
+p.save()
+```
 
 ## Relationships
 
@@ -39,30 +44,34 @@ A one-to-many relationship is a relationship where each record in the first tabl
 
 For example, if a Car model has a Manufacturer – that is, a Manufacturer makes multiple cars but each Car only has one Manufacturer – use the following definitions:
 
-    from django.db import models
+``` python
+from django.db import models
 
-    class Manufacturer(models.Model):
-        name = models.CharField(max_length=30)
+class Manufacturer(models.Model):
+	name = models.CharField(max_length=30)
 
-    class Car(models.Model):
-        manufacturer = models.ForeignKey(Manufacturer)
-        name = models.CharField(max_length=30)
+class Car(models.Model):
+	manufacturer = models.ForeignKey(Manufacturer)
+	name = models.CharField(max_length=30)
+```
 
 #### Reverse relationships
 
-    from models import Manufacturer, Car
+``` python
+from models import Manufacturer, Car
 
-    m = Manufacturer(name="Toyota")
-    m.save()
+m = Manufacturer(name="Toyota")
+m.save()
 
-    c1 = Car(name="Corolla", manufacturer_id=m.id)
-    c2 = Car(name="Yaris", manufacturer_id=m.id)
-    c1.save()
-    c2.save()
+c1 = Car(name="Corolla", manufacturer_id=m.id)
+c2 = Car(name="Yaris", manufacturer_id=m.id)
+c1.save()
+c2.save()
 
-    m.car_set.all()
-    m.car_set.filter()
-    m.car_set.count()
+m.car_set.all()
+m.car_set.filter()
+m.car_set.count()
+```
 
 Also, the Manufacturer can call the following methods to add cars to the car_set:
 
@@ -94,55 +103,63 @@ A many-to-many relationship is a relationship where each record in the first tab
 
 Each student can enroll in multiple courses, and each course can have multiple students enrolled.
 
-    class Student(models.Model):
-        name = models.CharField(max_length=100)
-        courses = models.ManyToManyField(Course, related_name='students')
+``` python
+class Student(models.Model):
+	name = models.CharField(max_length=100)
+	courses = models.ManyToManyField(Course, related_name='students')
 
-    class Course(models.Model):
-        name = models.CharField(max_length=100)
+class Course(models.Model):
+	name = models.CharField(max_length=100)
+```
 
 #### Reverse relationships
 
 Course -> Students
 
-    # get a course object
-    course = Course.objects.get(pk=1)
+``` python
+# get a course object
+course = Course.objects.get(pk=1)
 
-    # access all students enrolled in the course
-    students = course.students.all()
+# access all students enrolled in the course
+students = course.students.all()
+```
 
 Student -> Courses
 
-    # get a student object
-    student = Student.objects.get(pk=1)
+``` python
+# get a student object
+student = Student.objects.get(pk=1)
 
-    # access all courses that the student is enrolled in
-    courses = student.courses.all()
+# access all courses that the student is enrolled in
+courses = student.courses.all()
+```
 
 #### Using an intermediary model
 
 It's useful when you want to define extra fields in the relationship
 
-    from django.db import models
+``` python
+from django.db import models
 
-    class Person(models.Model):
-        name = models.CharField(max_length=128)
+class Person(models.Model):
+	name = models.CharField(max_length=128)
 
-        def __str__(self):
-            return self.name
+	def __str__(self):
+		return self.name
 
-    class Group(models.Model):
-        name = models.CharField(max_length=128)
-        members = models.ManyToManyField(Person, through='Membership')
+class Group(models.Model):
+	name = models.CharField(max_length=128)
+	members = models.ManyToManyField(Person, through='Membership')
 
-        def __str__(self):
-            eturn self.name
+	def __str__(self):
+		eturn self.name
 
-    class Membership(models.Model):
-        person = models.ForeignKey(Person, on_delete=models.CASCADE)
-        group = models.ForeignKey(Group, on_delete=models.CASCADE)
-        date_joined = models.DateField()
-        invite_reason = models.CharField(max_length=64)
+class Membership(models.Model):
+	person = models.ForeignKey(Person, on_delete=models.CASCADE)
+	group = models.ForeignKey(Group, on_delete=models.CASCADE)
+	date_joined = models.DateField()
+	invite_reason = models.CharField(max_length=64)
+```
 
 ### One-To-One
 
@@ -150,36 +167,42 @@ It's useful when you want to define extra fields in the relationship
 
 This is most useful on the primary key of an object when that object “extends” another object in some way.
 
-    class Person(models.Model):
-        name = models.CharField(max_length=100)
+``` python
+class Person(models.Model):
+	name = models.CharField(max_length=100)
 
-    class Profile(models.Model):
-        person = models.OneToOneField(Person, on_delete=models.CASCADE, related_name='profile')
-        bio = models.TextField()
+class Profile(models.Model):
+	person = models.OneToOneField(Person, on_delete=models.CASCADE, related_name='profile')
+	bio = models.TextField()
+```
 
 #### Reverse relationships
 
 Person -> Profile
 
-    # get a person object
-    person = Person.objects.get(pk=1)
+``` python
+# get a person object
+person = Person.objects.get(pk=1)
 
-    # access the associated profile object
-    profile = person.profile
+# access the associated profile object
+profile = person.profile
 
-    # print the bio of the person's profile
-    print(profile.bio)
+# print the bio of the person's profile
+print(profile.bio)
+```
 
 Profile -> Person
 
-    # get a profile object
-    profile = Profile.objects.get(pk=1)
+``` python
+# get a profile object
+profile = Profile.objects.get(pk=1)
 
-    # access the associated person object
-    person = profile.person
+# access the associated person object
+person = profile.person
 
-    # print the name of the person
-    print(person.name)
+# print the name of the person
+print(person.name)
+```
 
 ## Meta options
 
@@ -187,57 +210,63 @@ Is anything that is not a field.
 
 [All meta options](https://docs.djangoproject.com/en/4.1/ref/models/options/)
 
-    from django.db import models
+``` python
+from django.db import models
 
-    class Ox(models.Model):
-        horn_length = models.IntegerField()
+class Ox(models.Model):
+	horn_length = models.IntegerField()
 
-        class Meta:
-            ordering = ["horn_length"]
-            verbose_name_plural = "oxen"
-            db_table = "oxen"
+	class Meta:
+		ordering = ["horn_length"]
+		verbose_name_plural = "oxen"
+		db_table = "oxen"
+```
 
 ## Manager
 
 Is the interface through which database query operations are provided to Django models. Mainly used to retrieve the instances from the database. The default manager is `Model.objects`
 
-    from myapp.models import MyModel
+``` python
+from myapp.models import MyModel
 
-    # Retrieve all objects of MyModel
-    all_objects = MyModel.objects.all()
+# Retrieve all objects of MyModel
+all_objects = MyModel.objects.all()
 
-    # Retrieve a specific object of MyModel based on its primary key (id)
-    object_with_id_1 = MyModel.objects.get(id=1)
+# Retrieve a specific object of MyModel based on its primary key (id)
+object_with_id_1 = MyModel.objects.get(id=1)
 
-    # Retrieve objects of MyModel based on some other criteria
-    objects_with_field_value = MyModel.objects.filter(field_name=value)
+# Retrieve objects of MyModel based on some other criteria
+objects_with_field_value = MyModel.objects.filter(field_name=value)
 
-    # Create a new object of MyModel
-    new_object = MyModel(field_name_1=value_1, field_name_2=value_2)
+# Create a new object of MyModel
+new_object = MyModel(field_name_1=value_1, field_name_2=value_2)
 
-    # Save the new object to the database
-    new_object.save()
+# Save the new object to the database
+new_object.save()
 
-    # Create and save a new object of MyModel using the create() method
-    new_object = MyModel.objects.create(field_name_1=value_1, field_name_2=value_2)
+# Create and save a new object of MyModel using the create() method
+new_object = MyModel.objects.create(field_name_1=value_1, field_name_2=value_2)
+```
 
 ## Model Instance Methods
 
 Model methods act in a particular instance.
 
-    from django.db import models
+``` python
+from django.db import models
 
-    class Person(models.Model):
-        first_name = models.CharField(max_length=30)
-        last_name = models.CharField(max_length=30)
-        age = models.IntegerField(min=0)
+class Person(models.Model):
+	first_name = models.CharField(max_length=30)
+	last_name = models.CharField(max_length=30)
+	age = models.IntegerField(min=0)
 
-        def can_drink(self):
-            return self.age >= 18
+	def can_drink(self):
+		return self.age >= 18
 
-        @property
-        def full_name(self):
-            return '%s %s' % (self.first_name, self.last_name)
+	@property
+	def full_name(self):
+		return '%s %s' % (self.first_name, self.last_name)
+```
 
 [All model instance methods](https://docs.djangoproject.com/en/4.1/ref/models/instances/#model-instance-methods)
 
@@ -250,45 +279,51 @@ Model methods act in a particular instance.
 
 Often, you'll want to change the way an object is saved or deleted, you can override this behaviour.
 
-    from django.db import models
+``` python
+from django.db import models
 
-    class Person(models.Model):
-        ...fields
+class Person(models.Model):
+	...fields
 
-        def save(self, *args, **kwargs):
-            something()
-            super().save(*args, **kwargs) # Call the models.Model.save() method
+	def save(self, *args, **kwargs):
+		something()
+		super().save(*args, **kwargs) # Call the models.Model.save() method
+```
 
 ## Model Class Methods
 
-    from django.db import models
-    from datetime import date
+``` python
+from django.db import models
+from datetime import date
 
-    class Person(models.Model):
-        name = models.CharField(max_length=100)
-        birthdate = models.DateField()
+class Person(models.Model):
+	name = models.CharField(max_length=100)
+	birthdate = models.DateField()
 
-    @classmethod
-    def get_average_age(cls):
-        today = date.today()
-        total_age = 0
-        num_people = cls.objects.count()
-        for person in cls.objects.all():
-            total_age += # calculate age in current person
-        return total_age / num_people if num_people else 0
+@classmethod
+def get_average_age(cls):
+	today = date.today()
+	total_age = 0
+	num_people = cls.objects.count()
+	for person in cls.objects.all():
+		total_age += # calculate age in current person
+	return total_age / num_people if num_people else 0
+```
 
 Instead of adding the method as a static method of the class, creating a new Manager is preferred.
 
-    from django.db import models
+``` python
+from django.db import models
 
-    class PersonManager(models.Manager):
-            def get_average_age(self):
-                today = date.today()
-                total_age = 0
-                num_people = self.count()
-                for person in self.all():
-                    total_age += # calculate age in current person
-                return total_age / num_people if num_people else 0
+class PersonManager(models.Manager):
+		def get_average_age(self):
+			today = date.today()
+			total_age = 0
+			num_people = self.count()
+			for person in self.all():
+				total_age += # calculate age in current person
+			return total_age / num_people if num_people else 0
+```
 
 ## Model Inheritance
 
@@ -296,29 +331,33 @@ Instead of adding the method as a static method of the class, creating a new Man
 
 This model will then not be used to create any database table. Instead, when it is used as a base class for other models, its fields will be added to those of the child class.
 
-    from django.db import models
+``` python
+from django.db import models
 
-    class CommonInfo(models.Model):
-        name = models.CharField(max_length=100)
-        age = models.PositiveIntegerField()
+class CommonInfo(models.Model):
+	name = models.CharField(max_length=100)
+	age = models.PositiveIntegerField()
 
-        class Meta:
-            abstract = True
-            this_field_will_be_inherited_as_well = True
+	class Meta:
+		abstract = True
+		this_field_will_be_inherited_as_well = True
 
-    class Student(CommonInfo):
-        home_group = models.CharField(max_length=5)
+class Student(CommonInfo):
+	home_group = models.CharField(max_length=5)
 
-    class Teacher(CommonInfo):
-        area = models.CharField(max_length=30)
+class Teacher(CommonInfo):
+	area = models.CharField(max_length=30)
+```
 
 If you inherit from multiple abstract models, Python will only inherit the `Meta` of the first class passed. So if you want to inherit `Meta` from multiple classes, you'll have to set it explicitly.
 
-    from django.db import models
+``` python
+from django.db import models
 
-    class Person(models.Model):
-        Meta(Model1.Meta, Model2.Meta):
-            ...
+class Person(models.Model):
+	Meta(Model1.Meta, Model2.Meta):
+		...
+```
 
 ### 2. Multi-table inheritance
 
@@ -326,37 +365,41 @@ Each model corresponds to its own database table and can be queried and created 
 
 The inheritance relationship introduces links between the child model and each of its parents (via an automatically-created OneToOneField).
 
-    from django.db import models
+``` python
+from django.db import models
 
-    class Place(models.Model):
-        name = models.CharField(max_length=50)
-        address = models.CharField(max_length=80)
+class Place(models.Model):
+	name = models.CharField(max_length=50)
+	address = models.CharField(max_length=80)
 
-    class Restaurant(Place):
-        serves_hot_dogs = models.BooleanField(default=False)
-        serves_pizza = models.BooleanField(default=False)
+class Restaurant(Place):
+	serves_hot_dogs = models.BooleanField(default=False)
+	serves_pizza = models.BooleanField(default=False)
 
-    Place.objects.filter(name="Bob's Cafe")
-    Restaurant.objects.filter(name="Bob's Cafe")
+Place.objects.filter(name="Bob's Cafe")
+Restaurant.objects.filter(name="Bob's Cafe")
+```
 
 ### 3. Proxy models
 
 They can change the behaviour of the parent model without creating a new table.
 
-    from django.db import models
+``` python
+from django.db import models
 
-    class Person(models.Model):
-        first_name = models.CharField(max_length=30)
-        last_name = models.CharField(max_length=30)
+class Person(models.Model):
+	first_name = models.CharField(max_length=30)
+	last_name = models.CharField(max_length=30)
 
-    class MyPerson(Person):
-        class Meta:
-            ordering = ["last_name"]
-            proxy = True
+class MyPerson(Person):
+	class Meta:
+		ordering = ["last_name"]
+		proxy = True
 
-    def do_something(self):
-        # ...
-        pass
+def do_something(self):
+	# ...
+	pass
+```
 
 # Queries
 
@@ -425,26 +468,30 @@ They're specified as keyword arguments to the QuerySet methods `filter(), exclud
 
 ### JOINs
 
-    from django.db import models
-    class Blog(models.Model):
-        name = models.CharField(max_length=30)
+``` python
+from django.db import models
+class Blog(models.Model):
+	name = models.CharField(max_length=30)
 
-    class Entry(models.Model):
-        blog = models.ForeignKey(Blog)
+class Entry(models.Model):
+	blog = models.ForeignKey(Blog)
 
-`Entry.objects.filter(blog__name='Beatles Blog')`
+Entry.objects.filter(blog__name='Beatles Blog')
 
-`Blog.objects.filter(entry__headline__contains='Lennon')`
+Blog.objects.filter(entry__headline__contains='Lennon')
+```
 
 ### Compare with another field of the same model when filtering
 
 Using F, we can compare different fields of the same row when filtering.
 
-    from django.db.models import F
+``` python
+from django.db.models import F
 
-    Entry.objects.filter(number_of_comments__gt=F('number_of_pingbacks'))
-    Entry.objects.filter(number_of_comments__gt=F('number_of_pingbacks') * 2)
-    Entry.objects.filter(rating__lt=F('number_of_comments') + F('number_of_pingbacks'))
+Entry.objects.filter(number_of_comments__gt=F('number_of_pingbacks'))
+Entry.objects.filter(number_of_comments__gt=F('number_of_pingbacks') * 2)
+Entry.objects.filter(rating__lt=F('number_of_comments') + F('number_of_pingbacks'))
+```
 
 We can also compare a value with a nested model value, F will perform the necessary JOINs.
 
@@ -452,16 +499,18 @@ We can also compare a value with a nested model value, F will perform the necess
 
 ### The PK Shortcut
 
-    Blog.objects.get(id__exact=14) # Explicit form
-    Blog.objects.get(id=14) # __exact is implied
-    Blog.objects.get(pk=14) # pk implies id__exact
+``` python
+Blog.objects.get(id__exact=14) # Explicit form
+Blog.objects.get(id=14) # __exact is implied
+Blog.objects.get(pk=14) # pk implies id__exact
 
-    Blog.objects.filter(pk__in=[1,4,7])
-    Blog.objects.filter(pk__gt=14)
+Blog.objects.filter(pk__in=[1,4,7])
+Blog.objects.filter(pk__gt=14)
 
-    Entry.objects.filter(blog__id__exact=3) # Explicit form
-    Entry.objects.filter(blog__id=3)        # __exact is implied
-    Entry.objects.filter(blog__pk=3)        # __pk implies __id__exact
+Entry.objects.filter(blog__id__exact=3) # Explicit form
+Entry.objects.filter(blog__id=3)        # __exact is implied
+Entry.objects.filter(blog__pk=3)        # __pk implies __id__exact
+```
 
 ### Complex lookups with Q objects
 
@@ -473,10 +522,12 @@ Q objects can be combined using the &, |, and ^ operators. When an operator is u
 
 Q objects can also be negated `Q(question__startswith='Who') | ~Q(pub_date__year=2005)`
 
-    Poll.objects.get(
-        Q(question__startswith='Who'),
-        Q(pub_date=date(2005, 5, 2)) | Q(pub_date=date(2005, 5, 6))
-    )
+``` python
+Poll.objects.get(
+	Q(question__startswith='Who'),
+	Q(pub_date=date(2005, 5, 2)) | Q(pub_date=date(2005, 5, 6))
+)
+```
 
 ## Deleting
 
@@ -492,7 +543,8 @@ Query Sets also have a `delete()` method.
 
 Sometimes you will need to retrieve values that are derived by summarizing or aggregating a collection of objects.
 
-    from django.db import models
+``` python
+ from django.db import models
 
     class Author(models.Model):
         name = models.CharField(max_length=100)
@@ -513,14 +565,17 @@ Sometimes you will need to retrieve values that are derived by summarizing or ag
     class Store(models.Model):
         name = models.CharField(max_length=300)
         books = models.ManyToManyField(Book)
-
+```
+   
 ## Over a QuerySet
 
 QuerySets have an `aggregate()` method.
 
-    from django.db.models import Avg
+``` python
+from django.db.models import Avg
 
-    Book.objects.all().aggregate(Avg('price'))
+Book.objects.all().aggregate(Avg('price'))
+```
 
 [All Aggregation Functions](https://docs.djangoproject.com/en/4.1/ref/models/querysets/#aggregation-functions)
 
@@ -528,49 +583,61 @@ QuerySets have an `aggregate()` method.
 
 Per-object summaries can be generated using the `annotate()` clause.
 
-    from django.db.models import Count
+``` python
+from django.db.models import Count
 
-    q = Book.objects.annotate(Count('authors'))
-    q[0].authors__count
+q = Book.objects.annotate(Count('authors'))
+q[0].authors__count
+```
 
 Specify the aggregate field name:
 
-    from django.db.models import Count
+``` python
+from django.db.models import Count
 
-    q = Book.objects.annotate(num_authors=Count('authors'))
-    q[0].num_authors
+q = Book.objects.annotate(num_authors=Count('authors'))
+q[0].num_authors
+```
 
 ## JOINs and Aggregates
 
 Sometimes the value you want to aggregate will belong to a model that is related to the model you are querying.
 
-    from django.db.models import Max, Min
+``` python
+from django.db.models import Max, Min
 
-    Store.objects.annotate(min_price=Min('books__price'), max_price=Max('books__price'))
-    Store.objects.aggregate(youngest_age=Min('books__authors__age'))
+Store.objects.annotate(min_price=Min('books__price'), max_price=Max('books__price'))
+Store.objects.aggregate(youngest_age=Min('books__authors__age'))
+```
 
 ### Following the relation backwards
 
-    from django.db.models import Avg, Count, Min, Sum
+``` python
+from django.db.models import Avg, Count, Min, Sum
 
-    Publisher.objects.annotate(Count('book'))
-    Publisher.objects.aggregate(oldest_pubdate=Min('book__pubdate'))
-    Author.objects.annotate(total_pages=Sum('book__pages'))
-    Author.objects.aggregate(average_rating=Avg('book__rating'))
+Publisher.objects.annotate(Count('book'))
+Publisher.objects.aggregate(oldest_pubdate=Min('book__pubdate'))
+Author.objects.annotate(total_pages=Sum('book__pages'))
+Author.objects.aggregate(average_rating=Avg('book__rating'))
+```
 
 ### Filters and Aggregations
 
-    from django.db.models import Avg, Count
+``` python
+from django.db.models import Avg, Count
 
     Book.objects.filter(name__startswith="Django").annotate(num_authors=Count('authors'))
-    Book.objects.filter(name__startswith="Django").aggregate(Avg('price'))
+Book.objects.filter(name__startswith="Django").aggregate(Avg('price'))
 
-    Book.objects.annotate(num_authors=Count('authors')).filter(num_authors__gt=1)
+Book.objects.annotate(num_authors=Count('authors')).filter(num_authors__gt=1)
+```
 
 If you need two annotations with two separate filters you can use the filter argument with any aggregate. For example, to generate a list of authors with a count of highly rated books:
 
-    highly_rated = Count('book', filter=Q(book__rating__gte=7))
-    Author.objects.annotate(num_books=Count('book'), highly_rated_books=highly_rated)
+``` python
+highly_rated = Count('book', filter=Q(book__rating__gte=7))
+Author.objects.annotate(num_books=Count('book'), highly_rated_books=highly_rated)
+```
 
 ### Order By Annotation
 
@@ -580,9 +647,11 @@ If you need two annotations with two separate filters you can use the filter arg
 
 Get the average price for products on the same category
 
-    from django.db.models import Avg
+``` python
+from django.db.models import Avg
 
-    products = Product.objects.values('category').annotate(avg_price=Avg('price'))
+products = Product.objects.values('category').annotate(avg_price=Avg('price'))
+```
 
 # Search
 
@@ -594,15 +663,19 @@ Get the average price for products on the same category
 
 ## Unnacented comparison
 
-`Author.objects.filter(name__unaccent__icontains='Helen')`
-`User.objects.filter(first_name__unaccent__startswith="Jerem")`
+``` python
+Author.objects.filter(name__unaccent__icontains='Helen')
+User.objects.filter(first_name__unaccent__startswith="Jerem")
+```
 
 ## Trigram similarity
 
 In general, trigram_similar is more useful for finding strings that are similar in terms of their overall character content, while trigram_word_similar is more useful for finding strings that are similar in terms of their word content.
 
-`City.objects.filter(name__trigram_similar="Middlesborough")`
-`Sentence.objects.filter(name__trigram_word_similar='Middlesborough')`
+``` python
+City.objects.filter(name__trigram_similar="Middlesborough")
+Sentence.objects.filter(name__trigram_word_similar='Middlesborough')
+```
 
 ## Interesting data about searching
 
@@ -610,13 +683,15 @@ In general, trigram_similar is more useful for finding strings that are similar 
 
 ## PostgreSQL Search Extension
 
-    from models import Entry
+``` python
+from models import Entry
 
-    Entry.objects.filter(body_text__search='cheese')
+Entry.objects.filter(body_text__search='cheese')
 
-    Entry.objects.annotate(
-        search=SearchVector('blog__tagline', 'body_text'),
-    ).filter(search='cheese')
+Entry.objects.annotate(
+	search=SearchVector('blog__tagline', 'body_text'),
+).filter(search='cheese')
+```
 
 # Managers
 
@@ -624,10 +699,12 @@ A Manager is the interface through which database query operations are provided 
 
 The default name for the manager is `objects` but you can override it
 
-    from django.db import models
+``` python
+from django.db import models
 
-    class Person(models.Model):
-        people = models.Manager()
+class Person(models.Model):
+	people = models.Manager()
+```
 
 ## Custom Managers
 
@@ -637,89 +714,99 @@ There are two reasons you might want to customize a Manager: to add extra Manage
 
 ### Adding methods
 
-    from django.db import models
+``` python
+from django.db import models
 
-    class Author(models.Model):
-        name = models.CharField(max_length=255)
+class Author(models.Model):
+	name = models.CharField(max_length=255)
 
-    def __str__(self):
-        return self.name
+def __str__(self):
+	return self.name
 
-    class BookCountManager(models.Manager):
-        def with_num_of_books(self):
-            return self.annotate(num_of_books=models.Count('book'))
+class BookCountManager(models.Manager):
+	def with_num_of_books(self):
+		return self.annotate(num_of_books=models.Count('book'))
 
-    objects = BookCountManager()
+objects = BookCountManager()
 
-    class Book(models.Model):
-        title = models.CharField(max_length=255)
-        author = models.ForeignKey(Author, on_delete=models.CASCADE)
+class Book(models.Model):
+	title = models.CharField(max_length=255)
+	author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.title
+def __str__(self):
+	return self.title
+```
 
 ### Changing the initial queryset
 
-    class DahlBookManager(models.Manager):
-        def get_queryset(self):
-            return super().get_queryset().filter(author='Roald Dahl')
+``` python
+class DahlBookManager(models.Manager):
+	def get_queryset(self):
+		return super().get_queryset().filter(author='Roald Dahl')
 
-    class Book(models.Model):
-        title = models.CharField(max_length=100)
-        author = models.CharField(max_length=50)
+class Book(models.Model):
+	title = models.CharField(max_length=100)
+	author = models.CharField(max_length=50)
 
-        objects = models.Manager() # The default manager.
-        dahl_objects = DahlBookManager() # The Dahl-specific manager.
+	objects = models.Manager() # The default manager.
+	dahl_objects = DahlBookManager() # The Dahl-specific manager.
+```
 
 #### Defining custom QuerySet methods and using them on the Manager
 
-    class PersonQuerySet(models.QuerySet):
-        def authors(self):
-            return self.filter(role='A')
+``` python
+class PersonQuerySet(models.QuerySet):
+	def authors(self):
+		return self.filter(role='A')
 
-        def editors(self):
-            return self.filter(role='E')
+	def editors(self):
+		return self.filter(role='E')
 
-    class PersonManager(models.Manager):
-        def get_queryset(self):
-            return PersonQuerySet(self.model, using=self._db)
+class PersonManager(models.Manager):
+	def get_queryset(self):
+		return PersonQuerySet(self.model, using=self._db)
 
-        def authors(self):
-            return self.get_queryset().authors()
+	def authors(self):
+		return self.get_queryset().authors()
 
-        def editors(self):
-            return self.get_queryset().editors()
+	def editors(self):
+		return self.get_queryset().editors()
 
-    class Person(models.Model):
-        first_name = models.CharField(max_length=50)
-        last_name = models.CharField(max_length=50)
-        role = models.CharField(max_length=1, choices=[('A', _('Author')), ('E', _('Editor'))])
-        people = PersonManager()
+class Person(models.Model):
+	first_name = models.CharField(max_length=50)
+	last_name = models.CharField(max_length=50)
+	role = models.CharField(max_length=1, choices=[('A', _('Author')), ('E', _('Editor'))])
+	people = PersonManager()
+```
 
 The short version
 
-    class PersonQuerySet(models.QuerySet):
-        def authors(self):
-            return self.filter(role='A')
+``` python
+class PersonQuerySet(models.QuerySet):
+	def authors(self):
+		return self.filter(role='A')
 
-        def editors(self):
-            return self.filter(role='E')
+	def editors(self):
+		return self.filter(role='E')
 
-    class Person(models.Model):
-        people = PersonQuerySet.as_manager()
+class Person(models.Model):
+	people = PersonQuerySet.as_manager()
+```
 
 For advanced usage you might want both a custom Manager and a custom QuerySet.
 
-    class CustomManager(models.Manager):
-        def manager_only_method(self):
-            return
+``` python
+class CustomManager(models.Manager):
+	def manager_only_method(self):
+		return
 
-    class CustomQuerySet(models.QuerySet):
-        def manager_and_queryset_method(self):
-            return
+class CustomQuerySet(models.QuerySet):
+	def manager_and_queryset_method(self):
+		return
 
-    class MyModel(models.Model):
-        objects = CustomManager.from_queryset(CustomQuerySet)()
+class MyModel(models.Model):
+	objects = CustomManager.from_queryset(CustomQuerySet)()
+```
 
 # Raw SQL
 
@@ -737,44 +824,52 @@ In practice, this feature wraps every view function in the atomic() decorator.
 
 ## Prevent Atomic Requests (when ATOMIC_REQUESTS=True)
 
-    @transaction.non_atomic_requests
-    def my_view(request):
-        do_stuff()
+``` python
+@transaction.non_atomic_requests
+def my_view(request):
+	do_stuff()
+```
 
 ## Explicit
 
-    from django.db import transaction
+``` python
+from django.db import transaction
 
-    @transaction.atomic
-    def viewfunc(request):
-        # This code executes inside a transaction.
-        do_stuff()
+@transaction.atomic
+def viewfunc(request):
+	# This code executes inside a transaction.
+	do_stuff()
+```
 
 ## Using a Context Manager
 
-    from django.db import transaction
+``` python
+from django.db import transaction
 
-    def viewfunc(request):
-        # This code executes in autocommit mode (Django's default).
-        do_stuff()
+def viewfunc(request):
+	# This code executes in autocommit mode (Django's default).
+	do_stuff()
 
-    with transaction.atomic():
-        # This code executes inside a transaction.
-        do_more_stuff()
+with transaction.atomic():
+	# This code executes inside a transaction.
+	do_more_stuff()
+```
 
 # Tablespaces
 
 A common paradigm for optimizing performance in database systems is the use of tablespaces to organize disk layout.
 
-    class TablespaceExample(models.Model):
-        name = models.CharField(max_length=30, db_index=True, db_tablespace="indexes")
-        data = models.CharField(max_length=255, db_index=True)
-        shortcut = models.CharField(max_length=7)
-        edges = models.ManyToManyField(to="self", db_tablespace="indexes")
+``` python
+class TablespaceExample(models.Model):
+	name = models.CharField(max_length=30, db_index=True, db_tablespace="indexes")
+	data = models.CharField(max_length=255, db_index=True)
+	shortcut = models.CharField(max_length=7)
+	edges = models.ManyToManyField(to="self", db_tablespace="indexes")
 
-        class Meta:
-            db_tablespace = "tables"
-            indexes = [models.Index(fields=['shortcut'], db_tablespace='other_indexes')]
+	class Meta:
+		db_tablespace = "tables"
+		indexes = [models.Index(fields=['shortcut'], db_tablespace='other_indexes')]
+```
 
 # Database access optimization
 
@@ -790,10 +885,12 @@ Use Meta.indexes or Field.db_index to add these from Django. Consider adding ind
 
 The act of creating a QuerySet doesn’t involve any database activity. The query will be only executed when you "ask" for the results.
 
-    q = Entry.objects.filter(headline__startswith="What")
-    q = q.filter(pub_date__lte=datetime.date.today())
-    q = q.exclude(body_text__icontains="food")
-    print(q)
+``` python
+q = Entry.objects.filter(headline__startswith="What")
+q = q.filter(pub_date__lte=datetime.date.today())
+q = q.exclude(body_text__icontains="food")
+print(q)
+```
 
 This only hits the DB when you print q.
 
@@ -816,19 +913,23 @@ Each QuerySet contains a cache to minimize database access.
 
 #### Reuse
 
-    queryset = Entry.objects.all()
-    print([p.headline for p in queryset]) # Evaluate the query set.
-    print([p.pub_date for p in queryset]) # Reuse the cache from the evaluation.
-
+``` python
+queryset = Entry.objects.all()
+print([p.headline for p in queryset]) # Evaluate the query set.
+print([p.pub_date for p in queryset]) # Reuse the cache from the evaluation.
+```
 #### Will not cache (due to the slice)
 
-    queryset = Entry.objects.all()
-    print(queryset[5]) # Queries the database
-    print(queryset[5]) # Queries the database again
+``` python
+queryset = Entry.objects.all()
+print(queryset[5]) # Queries the database
+print(queryset[5]) # Queries the database again
+```
 
 #### The entire queryset is already evaluated, cache will be checked
-
-    queryset = Entry.objects.all()
-    [entry for entry in queryset] # Queries the database
-    print(queryset[5]) # Uses cache
-    print(queryset[5]) # Uses cache
+``` python
+queryset = Entry.objects.all()
+[entry for entry in queryset] # Queries the database
+print(queryset[5]) # Uses cache
+print(queryset[5]) # Uses cache
+```

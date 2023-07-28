@@ -21,16 +21,18 @@
 
 Example:
 
-    from django.urls import path
+``` python
+from django.urls import path
 
-    from . import views
+from . import views
 
-    urlpatterns = [
-        path('articles/2003/', views.special_case_2003),
-        path('articles/<int:year>/', views.year_archive),
-        path('articles/<int:year>/<int:month>/', views.month_archive),
-        path('articles/<int:year>/<int:month>/<slug:slug>/', views.article_detail),
-    ]
+urlpatterns = [
+	path('articles/2003/', views.special_case_2003),
+	path('articles/<int:year>/', views.year_archive),
+	path('articles/<int:year>/<int:month>/', views.month_archive),
+	path('articles/<int:year>/<int:month>/<slug:slug>/', views.article_detail),
+]
+```
 
 ### Cast Path Arguments to other Types
 
@@ -46,22 +48,26 @@ Also, you can add custom converters [Docs](https://docs.djangoproject.com/en/4.1
 
 ### Use Regular Expressions as URL Patterns
 
-    from django.urls import path, re_path
+``` python
+from django.urls import path, re_path
 
-    from . import views
+from . import views
 
-    urlpatterns = [
-        path('articles/2003/', views.special_case_2003),
-        re_path(r'^articles/(?P<year>[0-9]{4})/$', views.year_archive),
-        re_path(r'^articles/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$', views.month_archive),
-        re_path(r'^articles/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/(?P<slug>[\w-]+)/$', views.article_detail),
-    ]
+urlpatterns = [
+	path('articles/2003/', views.special_case_2003),
+	re_path(r'^articles/(?P<year>[0-9]{4})/$', views.year_archive),
+	re_path(r'^articles/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$', views.month_archive),
+	re_path(r'^articles/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/(?P<slug>[\w-]+)/$', views.article_detail),
+]
+```
 
 ### Default View Arguments
 
-    def page(request, num=1):
-        # Output the appropriate page of blog entries, according to num.
-        ...
+``` python
+def page(request, num=1):
+	# Output the appropriate page of blog entries, according to num.
+	...
+```
 
 ### Error Handling
 
@@ -69,22 +75,26 @@ The views to use for these cases are specified by four variables. Their default 
 
 They're overriden in your URLConf file.
 
-    handler404 = 'mysite.views.my_custom_page_not_found_view'
-    handler500 = 'mysite.views.my_custom_error_view'
-    handler403 = 'mysite.views.my_custom_permission_denied_view'
-    handler400 = 'mysite.views.my_custom_bad_request_view'
+``` python
+handler404 = 'mysite.views.my_custom_page_not_found_view'
+handler500 = 'mysite.views.my_custom_error_view'
+handler403 = 'mysite.views.my_custom_permission_denied_view'
+handler400 = 'mysite.views.my_custom_bad_request_view'
+```
 
 ## View Decorators
 
 ### Allowed HTTP Methods
 
-    from django.views.decorators.http import require_http_methods
+``` python
+from django.views.decorators.http import require_http_methods
 
-    @require_http_methods(["GET", "POST"])
-    def my_view(request):
-        # I can assume now that only GET or POST requests make it this far
-        # ...
-        pass
+@require_http_methods(["GET", "POST"])
+def my_view(request):
+	# I can assume now that only GET or POST requests make it this far
+	# ...
+	pass
+```
 
 ### Other
 
@@ -94,36 +104,38 @@ They're overriden in your URLConf file.
 
 When Django handles a file upload, the file data ends up placed in request.FILES
 
-    from django import forms
+``` python
+from django import forms
 
-    class UploadFileForm(forms.Form):
-        title = forms.CharField(max_length=50)
-        file = forms.FileField()
+class UploadFileForm(forms.Form):
+	title = forms.CharField(max_length=50)
+	file = forms.FileField()
+```
 
 A view handling this form will receive the file data in request.FILES.
 
-Request.FILES will only contain data if the request method was POST, at least one file field was actually posted, and the <form> that posted the request has the attribute enctype="multipart/form-data"
+`Request.FILES` will only contain data if the request method was POST, at least one file field was actually posted, and the `<form>` that posted the request has the attribute `enctype="multipart/form-data"`
 
-    from django.http import HttpResponseRedirect
-
+``` python
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import UploadFileForm
 
-    def upload_file(request):
-        if request.method == 'POST':
-            form = UploadFileForm(request.POST, request.FILES)
-            if form.is_valid():
-                handle_uploaded_file(request.FILES['file'])
-                return HttpResponseRedirect('/success/url/')
-        else:
-            form = UploadFileForm()
-        return render(request, 'upload.html', {'form': form})
+def upload_file(request):
+	if request.method == 'POST':
+		form = UploadFileForm(request.POST, request.FILES)
+		if form.is_valid():
+			handle_uploaded_file(request.FILES['file'])
+			return HttpResponseRedirect('/success/url/')
+	else:
+		form = UploadFileForm()
+	return render(request, 'upload.html', {'form': form})
 
-
-    def handle_uploaded_file(f):
-        with open('some/file/name.txt', 'wb+') as destination:
-            for chunk in f.chunks():
-                destination.write(chunk)
+def handle_uploaded_file(f):
+	with open('some/file/name.txt', 'wb+') as destination:
+		for chunk in f.chunks():
+			destination.write(chunk)
+```
 
 ### Using a ModelForm with a FileField
 
@@ -137,53 +149,59 @@ If you’re saving a file on a Model with a FileField, using a ModelForm makes t
 
 It globally alters the behaviour of the http request/response process.
 
-A middleware factory is a callable that takes a get_response callable and returns a middleware. A middleware is a callable that takes a request and returns a response, just like a view.
+A middleware factory is a callable that takes a `get_response` callable and returns a middleware. A middleware is a callable that takes a request and returns a response, just like a view.
 
-    def simple_middleware(get_response):
+``` python
+def simple_middleware(get_response):
     # One-time configuration and initialization.
 
     def middleware(request):
-        # Code to be executed for each request before
-        # the view (and later middleware) are called.
-
-        response = get_response(request)
-
-        # Code to be executed for each request/response after
-        # the view is called.
-
-        return response
+		# Code to be executed for each request before
+		# the view (and later middleware) are called.
+	
+		response = get_response(request)
+	
+		# Code to be executed for each request/response after
+		# the view is called.
+	
+		return response
 
     return middleware
+```
 
 or
 
-    class SimpleMiddleware:
-    def __init__(self, get_response):
-        self.get_response = get_response
-        # One-time configuration and initialization.
-
-    def __call__(self, request):
-        # Code to be executed for each request before
-        # the view (and later middleware) are called.
-
-        response = self.get_response(request)
-
-        # Code to be executed for each request/response after
-        # the view is called.
-
-        return response
+``` python
+class SimpleMiddleware:
+	def __init__(self, get_response):
+		self.get_response = get_response
+		# One-time configuration and initialization.
+	
+	def __call__(self, request):
+		# Code to be executed for each request before
+		# the view (and later middleware) are called.
+	
+		response = self.get_response(request)
+	
+		# Code to be executed for each request/response after
+		# the view is called.
+	
+		return response
+```
 
 To activate a middleware component, add it to the MIDDLEWARE list in your Django settings.
 
-    MIDDLEWARE = [
-        'django.middleware.security.SecurityMiddleware',
-        'django.contrib.sessions.middleware.SessionMiddleware',
-        'django.middleware.common.CommonMiddleware',
-        'django.middleware.csrf.CsrfViewMiddleware',
-        'django.contrib.auth.middleware.AuthenticationMiddleware',
-        'django.contrib.messages.middleware.MessageMiddleware',
-        'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    ]
+``` python
+MIDDLEWARE = [
+	'django.middleware.security.SecurityMiddleware',
+	'django.contrib.sessions.middleware.SessionMiddleware',
+	'django.middleware.common.CommonMiddleware',
+	'django.middleware.csrf.CsrfViewMiddleware',
+	'django.contrib.auth.middleware.AuthenticationMiddleware',
+	'django.contrib.messages.middleware.MessageMiddleware',
+	'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+```
 
 ## Sessions
 
@@ -195,10 +213,12 @@ There are a couple of ways of using session data: `database-backend sessions`, `
 
 If you have the SessionMiddleware in place, the request argument will contain a `session` attribute.
 
-    def post_comment(request, new_comment):
-        if request.session.get('has_commented', False):
-            return HttpResponse("You've already commented.")
-        c = comments.Comment(comment=new_comment)
-        c.save()
-        request.session['has_commented'] = True
-        return HttpResponse('Thanks for your comment!')
+``` python
+def post_comment(request, new_comment):
+	if request.session.get('has_commented', True):
+		return HttpResponse("You've already commented.")
+	c = comments.Comment(comment=new_comment)
+	c.save()
+	request.session['has_commented'] = True
+	return HttpResponse('Thanks for your comment!')
+```
