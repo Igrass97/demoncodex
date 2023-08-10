@@ -14,7 +14,7 @@ We could come to an approximation for $m$ using another point over the curve $Q(
 $$m_{PQ} = \frac{x^{2} - 1}{x - 1}$$
 Using:
 ***$Q(1.5, 2.25)$
-$x=1.5$***
+$x=1.5$
 
 $$
 \begin{aligned}
