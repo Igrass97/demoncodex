@@ -2,7 +2,7 @@
 
 The tangent of a curve is a straight line that touches the curve in ONE point. It has the same direction as the curve in the contact point.
 
-**Example 1: Find the equation of the tangent for $y = x^{2}$ in $P = (1,1)$.
+**Example 1: Find the equation of the tangent for $y = x^{2}$ in $P = (1,1)$.**
 
 The slope $m$ is needed to find the equation, to calculate the slope (given two points in a line) we use $\frac{y_{2} - y_{1}}{x_{2} - x_{1}}$ but we only have one point.
 
@@ -14,6 +14,7 @@ We could come to an approximation for $m$ using another point over the curve $Q(
 $$m_{PQ} = \frac{x^{2} - 1}{x - 1}$$
 
 ***$Q(1.5, 2.25)$ and $x=1.5$***
+
 $$
 \begin{aligned}
 m_{PQ} &= \frac{2.25 - 1}{1.5 - 1} \\ \\
