@@ -1,5 +1,6 @@
-#in-progress 
-In mathematics, a system of [[linear equations]] (or linear system) is a collection of one or more [[linear equations]] involving the same variables.
+#finished 
+
+In mathematics, a system of [[Linear Equations]] (or linear system) is a collection of one or more [[Linear Equations]] involving the same variables.
 
 **Example 1: Linear equations system. m = 3, n = 3**
 $$
@@ -11,7 +12,7 @@ $$
 $$
 
 
-A general system of m [[linear equations]] with n unknowns and coefficients can be written as
+A general system of m [[Linear Equations]] with n unknowns and coefficients can be written as
 
 $$
 \begin{aligned}
@@ -45,19 +46,25 @@ Each linear equation determines a plane in three-dimensional space, and the solu
 3. If the intersection is a plane: $\infty$ solutions
 4. If they don't intersect: 0 solutions
 
-### Ultimate Spell to Analyze System of [[Linear Equations]]
+## Augmented Matrix
+Consists on using the coefficients and constants from the equations to form a matrix.
 
+**Example 2: System in Matrix Form**
 $$
-\begin{aligned}
-x + y = 3 \\
-2x - 3y = 7 \\
-3x + 2y = 4
-\end{aligned}
+\begin{bmatrix}
+3 & 2 & -1 \\
+2 & -2 & 4 \\
+-1 & \frac{1}{2} & -1
+\end{bmatrix}
 $$
 
-**Row Echelon Form**: is a specific form of a matrix where the leading coefficient (the leftmost nonzero entry) of each nonzero row is 1, and the leading 1 in each row is to the right of the leading 1 in the row above it. Additionally, all elements below the leading 1's are zeros. This form simplifies the process of solving systems of [[linear equations]] and makes it easier to identify the nature of the solutions.
+## Gaussian Elimination
 
-**Example 2: Row Echelon Form**
+### Row Echelon Form
+- All rows consisting of only zeroes are at the bottom.
+- The leading entry (that is the left-most nonzero entry) of every nonzero row is to the right of the leading entry of every row above.
+
+**Example 3: Row Echelon Form**
 $$
 \begin{bmatrix}
 1 & 2 & 3 & 4 \\
@@ -67,8 +74,20 @@ $$
 \end{bmatrix}
 $$
 
+### Reduced Row Echelon Form
+- Row Echelon Form
+- All leading entries are 1 and each column containing a leading 1 has zeros in all its other entries.
 
-#### 1. Create the Augmented Matrix
+**Example 4: Reduced Row Echelon Form**
+$$
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+$$
+
+### Gaussian Elimination to transform into Reduced Row Echelon Form
 
 $$
 \begin{bmatrix}
@@ -77,8 +96,7 @@ $$
 3 & 2 & 4
 \end{bmatrix}
 $$
-#### 2. Gaussian Elimination (Row Operations)
-Now, we can use Gaussian elimination to transform the augmented matrix into row-echelon form.
+We can use Gaussian elimination to transform the augmented matrix into row-echelon form.
 
 Gaussian elimination is a systematic way to transform a matrix into row-echelon form using elementary row operations.
 
@@ -96,7 +114,8 @@ Gaussian elimination is a systematic way to transform a matrix into row-echelon 
 6. After reaching the last row or last column, the matrix should be in row-echelon form.
 7. If necessary, perform back-substitution to find the solutions to the system of equations.
 
-From the Augmented Matrix:
+#### Practical Example
+Create the Augmented Matrix:
 $$
 $$
 $$
@@ -106,8 +125,9 @@ $$
 3 & 2 & 4
 \end{bmatrix}
 $$
-1. Grab the pivot in R1 (1) and perform the following operations:
-	**R2 = R2 - 2R1**
+Grab the pivot in R1 (1)
+
+**R2 = R2 - 2R1**
 $$
 \begin{bmatrix}
 1 & 1 & 3 \\
@@ -115,7 +135,7 @@ $$
 3 & 2 & 4
 \end{bmatrix}
 $$
-	**R3 = R3 - 3R1**
+**R3 = R3 - 3R1**
 $$
 \begin{bmatrix}
 1 & 1 & 3 \\
@@ -123,13 +143,104 @@ $$
 0 & -1 & -5
 \end{bmatrix}
 $$
-2. Grab the pivot in R2 (-5) and make all elements below 0
-	**R3 = R3 + (-1/5 R2)**
+Grab the pivot in R2 (-5)
+
+**R3 = R3 - 1/5 R2**
 
 $$
 \begin{bmatrix}
 1 & 1 & 3 \\
 0 & -5 & 1 \\
 0 & 0 & -\frac{26}{5}
+\end{bmatrix}
+$$
+
+Reduce the row-echelon form
+$$
+\begin{bmatrix}
+1 & 1 & 3 \\
+0 & -5 & 1 \\
+0 & 0 & -\frac{26}{5}
+\end{bmatrix}
+$$
+
+**R2 = R2 - (1/5) R2**
+$$
+\begin{bmatrix}
+1 & 1 & 3 \\
+0 & 1 & -\frac{1}{5} \\
+0 & 0 & -\frac{26}{5}
+\end{bmatrix}
+$$
+**R3 = R3 - (31/26) R3**
+
+
+$$
+\begin{bmatrix}
+1 & 1 & 3 \\
+0 & 1 & -\frac{1}{5} \\
+0 & 0 & 1
+\end{bmatrix}
+$$
+
+**R1 = R1 - R2**
+
+$$
+\begin{bmatrix}
+1 & 0 & \frac{16}{5} \\
+0 & 1 & -\frac{1}{5} \\
+0 & 0 & 1
+\end{bmatrix}
+$$
+**R1 = R1 - (16/5)R3**
+$$
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & -\frac{1}{5} \\
+0 & 0 & 1
+\end{bmatrix}
+$$
+**R2 = R2 + (1/5)R3**
+$$
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+$$
+## Analyzing Row-Echelon Form
+
+Being $U$ the set of coefficients of the equations and $y$ the constants of the equations. (in row echelon form)
+
+### $0$ Solutions
+It happens if there is a leading column in $y$
+
+**Example 5: System with no solutions**
+$$
+\begin{bmatrix}
+2 & 4 & -1 & 3 \\
+0 & 5 & 5 & 2\\
+0 & 0 & 0 & 7
+\end{bmatrix}
+$$
+From the last equation, we get to a contradiction $0 = 1$
+
+### $\infty$ Solutions
+It happens when at least one column in $U$ is not leading. (and leading columns doesn't exist in $y$)
+
+$$
+\begin{bmatrix}
+2 & 4 & -1 & 3 \\
+0 & 5 & 5 & 2\\
+0 & 0 & 0 & 0
+\end{bmatrix}
+$$
+### $1$ solution
+It happens when every column in $U$ is leading.
+$$
+\begin{bmatrix}
+2 & 4 & -1 & 3 \\
+0 & 5 & 5 & 2 \\
+0 & 0 & 2 & 7
 \end{bmatrix}
 $$

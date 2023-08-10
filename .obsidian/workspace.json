@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "a4ca67d7a58bba05",
+        "id": "39a1caab9329f40a",
         "type": "tabs",
         "children": [
           {
-            "id": "e4a09e2d1ebb443d",
+            "id": "d2ed36511bc04ce2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Algebra/Algebra I/System of Linear Equations.md",
+                "file": "University/Calculus/Differential/Tangent Problem.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#in-progress",
+                "query": "tag:#complete",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 390.5
+    "width": 298.5110321044922
   },
   "right": {
     "id": "e0e614d4281f89c8",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "University/Algebra/Algebra I/System of Linear Equations.md",
+                "file": "University/Calculus/Differential/Tangent Problem.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "University/Algebra/Algebra I/System of Linear Equations.md",
+                "file": "University/Calculus/Differential/Tangent Problem.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "University/Algebra/Algebra I/System of Linear Equations.md"
+                "file": "University/Calculus/Differential/Tangent Problem.md"
               }
             }
           }
@@ -143,57 +143,58 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e4a09e2d1ebb443d",
+  "active": "d2ed36511bc04ce2",
   "lastOpenFiles": [
+    "University/Calculus/Differential/Limits and Continuity.md",
+    "University/Calculus/Differential/Differential Calculus.md",
+    "University/Math.md",
+    "University/Calculus/Sequences & Series/Sequences & Series.md",
+    "University/Calculus/Calculus.md",
+    "University/Calculus/Sequences & Series/Infinite Sequences.md",
+    "University/Calculus/Precalclulus/Precalculus.md",
+    "University/Calculus/Precalclulus/Functions/Functions.md",
+    "University/Calculus/Differential/Tangent Problem.md",
+    "Pasted image 20230810101802.png",
+    "Pasted image 20230810101740.png",
+    "University/Algebra/Pre Algebra/Linear Equations.md",
+    "University/Algebra/Pre Algebra/System of Linear Equations.md",
+    "Pasted image 20230810084809.png",
+    "University/Calculus/Precalclulus",
+    "University/Calculus/Differential",
+    "Pasted image 20230808224944.png",
+    "University/Algebra/Pre Algebra/Linear Inequalities.md",
+    "University/Algebra/Pre Algebra/Introduction to Variables.md",
+    "University/Algebra/Pre Algebra/Factoring.md",
     "University/Algebra/Algebra.md",
-    "University/Algebra/Algebra I/System of Linear Equations.md",
-    "University/Algebra/Algebra I/Linear Inequalities.md",
-    "University/Algebra/Algebra I/Linear Equations.md",
-    "University/Algebra/Algebra I/Introduction to Variables.md",
-    "University/Algebra/Algebra I/Algebra I.md",
-    "University/Algebra/Algebra I",
-    "Pre Algebra.md",
-    "Pasted image 20230727213653.png",
+    "University/Calculus/Sequences & Series",
+    "University/Siglo 21 Program/Calculo Avanzado",
+    "University/Siglo 21 Program",
+    "AIQ/Interviews.md",
+    "AIQ/AIQ.md",
+    "University/Algebra/Pre Algebra/Polynomials.md",
+    "AIQ",
+    "University/Algebra/Pre Algebra/Pre Algebra.md",
+    "University/Calculus/Precalclulus/Functions",
+    "University/Calculus",
     "Pasted image 20230727212700.png",
-    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django/Django.md",
-    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django/models.md",
-    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django/cheatsheet.md",
-    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django/http.md",
-    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Sorting/Sorting.md",
-    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Sorting/Radix Sort.md",
-    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Sorting/Insertion Sort.md",
-    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Searching/Binary Search.md",
+    "University/Pre Calculus.md",
+    "Pasted image 20230728215447.png",
+    "Pasted image 20230728214627.png",
     "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Sorting/Bubble Sort.md",
-    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Searching/Searching.md",
-    "IT/Software/Computer Science/Algorithms/Recursion/Recursive Sorting/Recursive Sorting.md",
-    "IT/Software/Computer Science/Algorithms/Recursion/Recursive Sorting/Quick Sort.md",
-    "IT/Software/Computer Science/Algorithms/Recursion/Recursive Sorting/Merge Sort.md",
-    "IT/Software/Computer Science/Algorithms/Recursion/Common Recursion Operations/Loop n times.md",
-    "IT/Software/Computer Science/Algorithms/Recursion/Common Recursion Operations/Fibonacci.md",
-    "IT/Software/Computer Science/Algorithms/Recursion/Common Recursion Operations/Factorial.md",
-    "IT/Software/Computer Science/Algorithms/Recursion/Common Recursion Operations/Common Recursion Operations.md",
-    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django",
-    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Python Frameworks.md",
-    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Tier 1 Spells (Algorithms).md",
-    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Sorting",
-    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Searching",
-    "IT/Software/Computer Science/Algorithms/Recursion/Recursive Sorting",
-    "IT/Software/Computer Science/Algorithms/Recursion/Common Recursion Operations",
-    "IT/Software/Application Development/Programming Languages/Python/Frameworks",
-    "IT/Software/Computer Science/Algorithms/Tier 1 Spells",
-    "IT/Software/Computer Science/Algorithms/Recursion",
-    "IT/Software/Application Development/Programming Languages/Python",
-    "IT/Pasted image 20230716134653.png",
-    "IT/Pasted image 20230715234405.png",
-    "IT/Pasted image 20230715224953.png",
-    "IT/Pasted image 20230715223810.png",
-    "IT/Pasted image 20230715223806.png",
-    "IT/Pasted image 20230715222449.png",
-    "IT/Pasted image 20230715222122.png",
-    "IT/Pasted image 20230715220941.png",
-    "Untitled.canvas"
+    "Pasted image 20230727213653.png",
+    "Pre Algebra.md",
+    "University/Algebra/Pre Algebra",
+    "University/Algebra/Basic/Solving Linear and Quadratic Equations.md",
+    "University/Algebra/Basic/Factoring and Expanding Algebraic Expressions.md",
+    "University/Algebra/Basic/Solving Systems of Equations.md",
+    "University/Algebra/Basic/Operations with Real Numbers.md",
+    "Untitled.canvas",
+    "IT/Pasted image 20230715215503.png",
+    "IT/Pasted image 20230715215530.png",
+    "IT/Hardware"
   ]
 }
