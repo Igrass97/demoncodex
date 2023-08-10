@@ -52,8 +52,8 @@ $$\lim_{x \to 1} \frac{(x-1)(x+1)}{x-1}$$
 $$\lim_{x \to 1} x+1 =2$$
 
 ***Slope-intercept form of tangent line in $P(1,1)$, $m = 2$***
-$$
 
+$$
 \begin{aligned}
 y - y_{1} &= m(x - x_{1}) \\
 y - 1 &= 2(x -1) \\
