@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DML.md",
+                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DDL.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 527.5
+    "width": 356.5
   },
   "right": {
     "id": "e0e614d4281f89c8",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DML.md",
+                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DDL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DML.md",
+                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DDL.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DML.md"
+                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DDL.md"
               }
             }
           }
@@ -149,46 +149,46 @@
   },
   "active": "6ba249be0ce29773",
   "lastOpenFiles": [
-    "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DDL.md",
+    "IT/Software/Application Development/Databases/SQL (Oracle based)/Domain.md",
+    "IT/Software/Application Development/Databases/SQL (SQL Server based)/Database Schema (Transact-SQL).md",
+    "IT/Software/Application Development/Databases/SQL (SQL Server based)/Datatypes.md",
+    "IT/Software/Application Development/Databases/SQL (SQL Server based)/Untitled",
+    "IT/Software/Application Development/Databases/Untitled",
+    "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL TCL.md",
+    "IT/Software/Application Development/Databases/SQL (SQL Server based)",
     "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DML.md",
-    "University/Databases I/SQL.md",
-    "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL.md",
+    "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DDL.md",
+    "University/Calculus/Sequences & Series/Sequences & Series.md",
+    "University/Calculus/Sequences & Series/Infinite Sequences.md",
+    "University/Calculus/Differential/Tangent Problem.md",
+    "University/Calculus/Differential/Limits and Continuity.md",
+    "University/Calculus/Differential/Differential Calculus.md",
+    "University/Algebra/Algebra.md",
+    "University/Algebra/Pre Algebra/System of Linear Equations.md",
+    "University/Algebra/Pre Algebra/Pre Algebra.md",
+    "University/Algebra/Pre Algebra/Polynomials.md",
+    "University/Algebra/Pre Algebra/Linear Inequalities.md",
+    "University/Algebra/Pre Algebra/Linear Equations.md",
+    "University/Algebra/Pre Algebra/Introduction to Variables.md",
+    "University/Algebra/Pre Algebra/Factoring.md",
+    "IT/Software/Security.md",
+    "IT/Software/Software.md",
+    "IT/Software/Operative Systems.md",
+    "IT/Software/Networking.md",
+    "IT/Software/Computer Science/Algorithms/Recursion/Common Recursion Operations/Factorial.md",
+    "IT/Software/Computer Science/Algorithms/Recursion/Common Recursion Operations/Fibonacci.md",
+    "IT/Software/Computer Science/Algorithms/Recursion/Common Recursion Operations/Loop n times.md",
     "University/Databases I/Untitled",
-    "University/Databases I/M3/M.md",
     "IT/Software/Application Development/Databases/SQL (Oracle based)",
     "IT/Software/Application Development/Databases",
-    "IT/Software/Computer Science/Data Structures.md",
-    "IT/Software/Computer Science/Computer Science.md",
-    "IT/Software/Data Science.md",
     "University/Databases I/M1/Definition & DBMS.pdf",
     "University/Databases I/M1/Relational Model (Relational Databases).pdf",
     "University/Databases I/M1/Relational Algebra.pdf",
     "University/Databases I/M1",
-    "University/Databases I/New folder",
-    "University/Databases I/M3",
-    "University/Databases I",
-    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django/models.md",
-    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django/http.md",
-    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django/cheatsheet.md",
-    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Python Frameworks.md",
-    "IT/Software/Software.md",
-    "IT/IT.md",
-    "University/Calculus/Differential/Tangent Problem.md",
-    "University/Calculus/Differential/Limits and Continuity.md",
-    "University/Calculus/Differential/Differential Calculus.md",
-    "University/Math.md",
-    "University/Calculus/Sequences & Series/Sequences & Series.md",
-    "University/Calculus/Calculus.md",
-    "University/Calculus/Sequences & Series/Infinite Sequences.md",
-    "University/Calculus/Precalclulus/Precalculus.md",
-    "University/Calculus/Precalclulus/Functions/Functions.md",
     "Pasted image 20230810101802.png",
     "Pasted image 20230810101740.png",
-    "University/Algebra/Pre Algebra/Linear Equations.md",
-    "University/Algebra/Pre Algebra/System of Linear Equations.md",
     "Pasted image 20230810084809.png",
     "Pasted image 20230808224944.png",
-    "University/Algebra/Pre Algebra/Linear Inequalities.md",
     "Pasted image 20230727212700.png",
     "Pasted image 20230728215447.png",
     "Pasted image 20230728214627.png",
