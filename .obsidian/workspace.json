@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "39a1caab9329f40a",
+        "id": "c1dbd7bcc71d8109",
         "type": "tabs",
         "children": [
           {
-            "id": "d2ed36511bc04ce2",
+            "id": "6ba249be0ce29773",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Calculus/Differential/Tangent Problem.md",
+                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DML.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 298.5110321044922
+    "width": 527.5
   },
   "right": {
     "id": "e0e614d4281f89c8",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "University/Calculus/Differential/Tangent Problem.md",
+                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DML.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "University/Calculus/Differential/Tangent Problem.md",
+                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DML.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "University/Calculus/Differential/Tangent Problem.md"
+                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DML.md"
               }
             }
           }
@@ -147,8 +147,33 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "d2ed36511bc04ce2",
+  "active": "6ba249be0ce29773",
   "lastOpenFiles": [
+    "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DDL.md",
+    "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DML.md",
+    "University/Databases I/SQL.md",
+    "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL.md",
+    "University/Databases I/Untitled",
+    "University/Databases I/M3/M.md",
+    "IT/Software/Application Development/Databases/SQL (Oracle based)",
+    "IT/Software/Application Development/Databases",
+    "IT/Software/Computer Science/Data Structures.md",
+    "IT/Software/Computer Science/Computer Science.md",
+    "IT/Software/Data Science.md",
+    "University/Databases I/M1/Definition & DBMS.pdf",
+    "University/Databases I/M1/Relational Model (Relational Databases).pdf",
+    "University/Databases I/M1/Relational Algebra.pdf",
+    "University/Databases I/M1",
+    "University/Databases I/New folder",
+    "University/Databases I/M3",
+    "University/Databases I",
+    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django/models.md",
+    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django/http.md",
+    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django/cheatsheet.md",
+    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Python Frameworks.md",
+    "IT/Software/Software.md",
+    "IT/IT.md",
+    "University/Calculus/Differential/Tangent Problem.md",
     "University/Calculus/Differential/Limits and Continuity.md",
     "University/Calculus/Differential/Differential Calculus.md",
     "University/Math.md",
@@ -157,44 +182,19 @@
     "University/Calculus/Sequences & Series/Infinite Sequences.md",
     "University/Calculus/Precalclulus/Precalculus.md",
     "University/Calculus/Precalclulus/Functions/Functions.md",
-    "University/Calculus/Differential/Tangent Problem.md",
     "Pasted image 20230810101802.png",
     "Pasted image 20230810101740.png",
     "University/Algebra/Pre Algebra/Linear Equations.md",
     "University/Algebra/Pre Algebra/System of Linear Equations.md",
     "Pasted image 20230810084809.png",
-    "University/Calculus/Precalclulus",
-    "University/Calculus/Differential",
     "Pasted image 20230808224944.png",
     "University/Algebra/Pre Algebra/Linear Inequalities.md",
-    "University/Algebra/Pre Algebra/Introduction to Variables.md",
-    "University/Algebra/Pre Algebra/Factoring.md",
-    "University/Algebra/Algebra.md",
-    "University/Calculus/Sequences & Series",
-    "University/Siglo 21 Program/Calculo Avanzado",
-    "University/Siglo 21 Program",
-    "AIQ/Interviews.md",
-    "AIQ/AIQ.md",
-    "University/Algebra/Pre Algebra/Polynomials.md",
-    "AIQ",
-    "University/Algebra/Pre Algebra/Pre Algebra.md",
-    "University/Calculus/Precalclulus/Functions",
-    "University/Calculus",
     "Pasted image 20230727212700.png",
-    "University/Pre Calculus.md",
     "Pasted image 20230728215447.png",
     "Pasted image 20230728214627.png",
-    "IT/Software/Computer Science/Algorithms/Tier 1 Spells/Sorting/Bubble Sort.md",
     "Pasted image 20230727213653.png",
-    "Pre Algebra.md",
-    "University/Algebra/Pre Algebra",
-    "University/Algebra/Basic/Solving Linear and Quadratic Equations.md",
-    "University/Algebra/Basic/Factoring and Expanding Algebraic Expressions.md",
-    "University/Algebra/Basic/Solving Systems of Equations.md",
-    "University/Algebra/Basic/Operations with Real Numbers.md",
     "Untitled.canvas",
     "IT/Pasted image 20230715215503.png",
-    "IT/Pasted image 20230715215530.png",
-    "IT/Hardware"
+    "IT/Pasted image 20230715215530.png"
   ]
 }

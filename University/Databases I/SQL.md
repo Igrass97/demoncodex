@@ -1,0 +1,1 @@
+[[IT/Software/Application Development/Databases/SQL (Oracle based)/SQL|SQL]]
