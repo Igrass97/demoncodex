@@ -4,22 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "c1dbd7bcc71d8109",
+        "id": "d414e3806d42b48c",
         "type": "tabs",
         "children": [
           {
-            "id": "6ba249be0ce29773",
+            "id": "9c8a4b60a7ee882a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DDL.md",
+                "file": "IT/Software/Computer Science/AI/Search (one agent).md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c9607390045ef7cb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "IT/Software/Computer Science/AI/Search (one agent).md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,7 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 356.5
+    "width": 200
   },
   "right": {
     "id": "e0e614d4281f89c8",
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DDL.md",
+                "file": "IT/Software/Computer Science/AI/Search (one agent).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DDL.md",
+                "file": "IT/Software/Computer Science/AI/Search (one agent).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DDL.md"
+                "file": "IT/Software/Computer Science/AI/Search (one agent).md"
               }
             }
           }
@@ -147,52 +160,52 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6ba249be0ce29773",
+  "active": "c9607390045ef7cb",
   "lastOpenFiles": [
-    "IT/Software/Application Development/Databases/SQL (Oracle based)/Domain.md",
-    "IT/Software/Application Development/Databases/SQL (SQL Server based)/Database Schema (Transact-SQL).md",
-    "IT/Software/Application Development/Databases/SQL (SQL Server based)/Datatypes.md",
-    "IT/Software/Application Development/Databases/SQL (SQL Server based)/Untitled",
-    "IT/Software/Application Development/Databases/Untitled",
-    "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL TCL.md",
-    "IT/Software/Application Development/Databases/SQL (SQL Server based)",
-    "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DML.md",
-    "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DDL.md",
-    "University/Calculus/Sequences & Series/Sequences & Series.md",
-    "University/Calculus/Sequences & Series/Infinite Sequences.md",
-    "University/Calculus/Differential/Tangent Problem.md",
-    "University/Calculus/Differential/Limits and Continuity.md",
-    "University/Calculus/Differential/Differential Calculus.md",
-    "University/Algebra/Algebra.md",
-    "University/Algebra/Pre Algebra/System of Linear Equations.md",
-    "University/Algebra/Pre Algebra/Pre Algebra.md",
-    "University/Algebra/Pre Algebra/Polynomials.md",
-    "University/Algebra/Pre Algebra/Linear Inequalities.md",
-    "University/Algebra/Pre Algebra/Linear Equations.md",
-    "University/Algebra/Pre Algebra/Introduction to Variables.md",
-    "University/Algebra/Pre Algebra/Factoring.md",
+    "IT/Software/Computer Science/AI/Glossary.md",
+    "IT/Software/Computer Science/AI/Search (one agent).md",
+    "IT/Software/Networking.md",
+    "IT/Software/Computer Science/Computer Science.md",
+    "IT/Software/Data Science.md",
+    "IT/Software/Computer Science/AI",
+    "IT/Software/Computer Science/Data Structures.md",
+    "IT/Software/Computer Science/Algorithms/Big O.md",
+    "IT/Software/Computer Science/Algorithms/Algorithms.md",
+    "IT/Software/Operative Systems.md",
     "IT/Software/Security.md",
     "IT/Software/Software.md",
-    "IT/Software/Operative Systems.md",
-    "IT/Software/Networking.md",
-    "IT/Software/Computer Science/Algorithms/Recursion/Common Recursion Operations/Factorial.md",
-    "IT/Software/Computer Science/Algorithms/Recursion/Common Recursion Operations/Fibonacci.md",
-    "IT/Software/Computer Science/Algorithms/Recursion/Common Recursion Operations/Loop n times.md",
+    "IT/Hardware/Hardware.md",
+    "IT/Software/Application Development/Programming Languages/Python/Python.md",
+    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django/http.md",
+    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django/models.md",
+    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django/cheatsheet.md",
+    "IT/Software/Application Development/Programming Languages/Python/Frameworks/Django/Django.md",
+    "IT/Software/Application Development/Application Development.md",
+    "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DDL.md",
+    "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL TCL.md",
+    "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL DML.md",
+    "IT/Software/Application Development/Databases/SQL (Oracle based)/SQL.md",
+    "IT/Software/Application Development/Databases/SQL (Oracle based)/Domain.md",
+    "IT/Software/Application Development/Databases/SQL (SQL Server based)/Database Schema (Transact-SQL).md",
+    "University/Databases I/SQL.md",
+    "University/Calculus/Sequences & Series/Sequences & Series.md",
+    "Pasted image 20230727213653.png",
+    "Pasted image 20230727212700.png",
+    "Misc",
+    "IT/Software/Application Development/Databases/SQL (SQL Server based)/Untitled",
+    "IT/Software/Application Development/Databases/Untitled",
+    "IT/Software/Application Development/Databases/SQL (SQL Server based)",
     "University/Databases I/Untitled",
     "IT/Software/Application Development/Databases/SQL (Oracle based)",
     "IT/Software/Application Development/Databases",
     "University/Databases I/M1/Definition & DBMS.pdf",
     "University/Databases I/M1/Relational Model (Relational Databases).pdf",
-    "University/Databases I/M1/Relational Algebra.pdf",
-    "University/Databases I/M1",
     "Pasted image 20230810101802.png",
     "Pasted image 20230810101740.png",
     "Pasted image 20230810084809.png",
     "Pasted image 20230808224944.png",
-    "Pasted image 20230727212700.png",
     "Pasted image 20230728215447.png",
     "Pasted image 20230728214627.png",
-    "Pasted image 20230727213653.png",
     "Untitled.canvas",
     "IT/Pasted image 20230715215503.png",
     "IT/Pasted image 20230715215530.png"
